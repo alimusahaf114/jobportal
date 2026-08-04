@@ -1,4 +1,4 @@
-[
+export const jobsData = [
   {
     "id": 1,
     "title": "Frontend Developer",
