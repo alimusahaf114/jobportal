@@ -1,6 +1,6 @@
 @import "tailwindcss";
 body{
-    background-color: #e4e3e3;
+    background-color: #f5f1f1;
 }
 .filter-option{
     display: flex;

@@ -5,13 +5,16 @@ import Sidebar from '../layout/Sidebar';
 import Main from '../layout/Main';
 const Home = () => {
   return (
-    <div>
+    <div className='flex'>
+      <div>
+      <Sidebar/>
+      </div>
+      <div>
       <Header/>
       <SearchBox/> 
-       <div className='flex '>
-        <Main className='w-3/4'/>
+      <Main />
+      </div>
 
-       </div>
     </div>
   );
 }
