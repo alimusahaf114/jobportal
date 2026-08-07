@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IoSearch } from "react-icons/io5";
 import { CiLocationOn } from "react-icons/ci";
 const SearchBox = () => {
+  const [search , setSearch ] = useState("")
+  console.log(search);
+  
   return (
    <div className="w-full flex justify-center px-4 mt-5">
   <div className="w-full mt-3 items-start md:items-center max-w-6xl bg-white border border-gray-300 rounded-md md:rounded-full p-2 flex justify-between flex-col md:flex-row gap-4 ">
@@ -9,6 +12,8 @@ const SearchBox = () => {
    <IoSearch className='text-gray-500 text-xl'/>
     <input
       type="text"
+      value={search}
+      onChange={(e)=>setSearch(e.target.value)}
       placeholder="Search job title or Company"
       className="w-full items-center flex-1 md:flex-1 py-3 px-4 rounded-md outline-none"
     />

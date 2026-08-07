@@ -13,7 +13,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={` ${isOpen ? 'w-64' : 'w-10 '}  overflow-hidden translate-x bg-white p-2 h-screen transition-all duration-300`}>
+    <div className={` ${isOpen ? 'w-64' : 'w-10 '}  sticky top-0 h-screen overflow-hidden translate-x bg-white p-2  transition-all duration-300`}>
       <MdMenu className="text-2xl " onClick={handleMenuClick} />
       {isOpen && (
         <div>
