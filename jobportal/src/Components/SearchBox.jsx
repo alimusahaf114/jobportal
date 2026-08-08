@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { CiLocationOn } from "react-icons/ci";
 import { jobsData } from "../data/jobs";
-const SearchBox = ({search , setSearch}) => {
-  // const [search, setSearch] = useState("");
+import { jobsContext } from "../context/jobsContext";
+const SearchBox = () => {
+  const {search , setSearch} = useContext(jobsContext)
   const filteredData = jobsData.filter((job) => {
     return (
       job.title.toLowerCase().includes(search.toLowerCase()) ||
