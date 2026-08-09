@@ -1,17 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { IoSearch } from "react-icons/io5";
 import { CiLocationOn } from "react-icons/ci";
 import { jobsData } from "../data/jobs";
-import { jobsContext } from "../context/jobsContext";
+import { JobsContext } from "../context/JobsContext";
 const SearchBox = () => {
-  const {search , setSearch} = useContext(jobsContext)
-  const filteredData = jobsData.filter((job) => {
-    return (
-      job.title.toLowerCase().includes(search.toLowerCase()) ||
-      job.company.toLowerCase().includes(search.toLowerCase())
-    );
-  });
-  console.log(filteredData);
+  const {search , setSearch} = useContext(JobsContext)
+  
 
   return (
     <div className="w-full flex justify-center px-4 mt-5">

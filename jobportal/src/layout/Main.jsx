@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { jobsData } from '../data/jobs';
-import { jobsContext } from '../context/jobsContext';
+import { JobsContext } from '../context/JobsContext';
 const Main = () => {
-  const {search} = useContext(jobsContext)
+  const {search} = useContext(JobsContext)
   const filteredData = jobsData.filter((job) => {
       return (
         job.title.toLowerCase().includes(search.toLowerCase()) ||
