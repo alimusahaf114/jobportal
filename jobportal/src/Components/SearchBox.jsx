@@ -4,7 +4,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { jobsData } from "../data/jobs";
 import { JobsContext } from "../context/JobsContext";
 const SearchBox = () => {
-  const {search , setSearch} = useContext(JobsContext)
+  const {loc , setLoc , search , setSearch} = useContext(JobsContext)
   
 
   return (
@@ -26,6 +26,8 @@ const SearchBox = () => {
           <input
             type="text"
             placeholder="Location"
+            value={loc}
+            onChange={(e) => setLoc(e.target.value)}
             className="w-full items-center flex-1 py-3 px-4 rounded-md outline-none"
           />
         </div>

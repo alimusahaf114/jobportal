@@ -2,19 +2,24 @@ import React, { useContext } from "react";
 import { jobsData } from "../data/jobs";
 import { JobsContext } from "../context/JobsContext";
 const Main = () => {
-  const { search, typeFilter, category } = useContext(JobsContext);
+  const { loc, setLoc, search, typeFilter, category } = useContext(JobsContext);
   const filteredData = jobsData.filter((job) => {
     const matchesSearch =
       job.title.toLowerCase().includes(search.toLowerCase()) ||
       job.company.toLowerCase().includes(search.toLowerCase());
-    const matchesType =
+    
+      const matchLoc =
+      job.location == "" ||
+      job.location.toLowerCase().includes(loc.toLowerCase());
+   
+      const matchesType =
       typeFilter.length === 0 ||
       typeFilter.some((filter) =>
         filter == "Remote" ? job.location === "Remote" : job.type === filter,
       );
     const matchesCategory = category === "" || job.category === category;
 
-    return matchesSearch && matchesType && matchesCategory
+    return matchesSearch && matchesType && matchesCategory && matchLoc;
   });
   return (
     <a href="#">
