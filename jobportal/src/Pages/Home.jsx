@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import Header from '../layout/Header';
 import SearchBox from '../Components/SearchBox';
 import Sidebar from '../layout/Sidebar';
 import Main from '../layout/Main';
@@ -10,7 +8,6 @@ const Home = () => {
       <Sidebar/>
       </div>
       <div className='w-screen'>
-      <Header/>
       <SearchBox/> 
       <Main />
       </div>
